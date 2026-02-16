@@ -1,0 +1,20 @@
+[package]
+name = "caffeinate"
+version = "0.1.0"
+edition = "2021"
+description = "Cross-platform caffeinate command for Linux and Windows"
+license = "MIT"
+repository = "https://github.com/i-rocky/caffeinate"
+
+[dependencies]
+ctrlc = "3.4"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+zbus = "5.13.2"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+windows-sys = { version = "0.59", features = [
+  "Win32_Foundation",
+  "Win32_System_Power",
+  "Win32_System_Threading",
+] }

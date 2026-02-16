@@ -1,0 +1,17 @@
+{
+  "version": "0.1.0",
+  "description": "Cross-platform caffeinate command for Linux and Windows.",
+  "homepage": "https://github.com/i-rocky/caffeinate",
+  "license": "MIT",
+  "url": "https://github.com/i-rocky/caffeinate/releases/download/v0.1.0/caffeinate-windows-x86_64-v0.1.0.zip",
+  "hash": "REPLACE_WITH_SHA256",
+  "bin": "caffeinate.exe",
+  "checkver": "github",
+  "autoupdate": {
+    "url": "https://github.com/i-rocky/caffeinate/releases/download/v$version/caffeinate-windows-x86_64-v$version.zip",
+    "hash": {
+      "url": "https://github.com/i-rocky/caffeinate/releases/download/v$version/SHA256SUMS.txt",
+      "regex": "$sha256\\s+caffeinate-windows-x86_64-v$version\\.zip"
+    }
+  }
+}
