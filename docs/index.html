@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>caffeinate — keep Linux and Windows awake with macOS-compatible flags</title>
 <meta name="description" content="Cross-platform caffeinate for Linux and Windows with macOS-compatible CLI flags. Prevent sleep while a command runs, for a timeout, or until a PID exits.">
+<script src="https://cdn.jsdelivr.net/npm/x-zsh@0.7/x-zsh.min.js"></script>
 <style>
 :root {
   --bg: #0d1117;
@@ -90,12 +91,18 @@ a { color: var(--accent); }
     <a class="btn primary" href="#install">Install</a>
     <a class="btn ghost" href="https://github.com/i-rocky/caffeinate">GitHub</a>
   </div>
-  <div class="term hero-term">$ caffeinate make test
-<span class="dim"># sleep is prevented while make runs; assertion released on exit</span>
-<span class="pct">ok</span>  all tests passed  <span class="dim">(idle-sleep inhibited for 4m 12s)</span>
-
-$ caffeinate -disu -t 3600   <span class="dim"># keep everything awake for an hour</span>
-$ caffeinate -w 12345        <span class="dim"># stay awake until PID 12345 exits</span></div>
+  <div class="hero-term">
+  <x-zsh os="ubuntu" height="280" loop loop-delay="3500">
+    note: prevent sleep while a long job runs — assertion released on exit
+    cmd: caffeinate make test
+    spinner[2.5s]: running tests => tests passed
+    note: idle sleep was inhibited while make ran
+    delay[1200]:
+    cmd: caffeinate -t 3600
+    note: machine stays awake for an hour — Ctrl+C to stop early
+    key: ^C
+  </x-zsh>
+  </div>
 </header>
 
 <section class="wrap" id="why">
