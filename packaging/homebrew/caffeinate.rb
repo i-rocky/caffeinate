@@ -4,15 +4,8 @@ class Caffeinate < Formula
   version "0.1.1"
   license "MIT"
 
-  on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/i-rocky/caffeinate/releases/download/v0.1.1/caffeinate-darwin-aarch64-v0.1.1.tar.gz"
-      sha256 "REPLACE_DARWIN_ARM64_SHA256"
-    else
-      url "https://github.com/i-rocky/caffeinate/releases/download/v0.1.1/caffeinate-darwin-x86_64-v0.1.1.tar.gz"
-      sha256 "REPLACE_DARWIN_X86_64_SHA256"
-    end
-  end
+  # macOS ships caffeinate natively; this formula is Linux-only on purpose.
+  depends_on :linux
 
   on_linux do
     if Hardware::CPU.arm?

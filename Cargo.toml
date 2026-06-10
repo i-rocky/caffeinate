@@ -1,6 +1,6 @@
 [package]
 name = "caffeinate"
-version = "0.1.1"
+version = "0.2.0"
 edition = "2021"
 description = "Cross-platform caffeinate command for Linux and Windows"
 license = "MIT"

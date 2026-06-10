@@ -2,6 +2,10 @@
 
 Cross-platform `caffeinate` for Linux and Windows with macOS-compatible CLI flags.
 
+macOS already ships `caffeinate` at `/usr/bin/caffeinate`; this project brings
+the same command and flag semantics to Linux and Windows. On macOS this binary
+refuses to run so it can never shadow the real one.
+
 ## What it does
 
 `caffeinate` prevents sleep while you run a command or until timeout/PID completion.
@@ -59,7 +63,7 @@ scoop bucket add rocky https://github.com/i-rocky/scoop-bucket
 scoop install caffeinate
 ```
 
-### macOS/Linux (Homebrew tap)
+### Linux (Homebrew tap)
 
 ```sh
 brew tap i-rocky/tap
@@ -83,8 +87,6 @@ Tagging `v*` triggers GitHub Actions release publishing with:
 - `caffeinate-windows-x86_64-vX.Y.Z.zip`
 - `caffeinate-linux-x86_64-vX.Y.Z.tar.gz`
 - `caffeinate-linux-aarch64-vX.Y.Z.tar.gz`
-- `caffeinate-darwin-x86_64-vX.Y.Z.tar.gz`
-- `caffeinate-darwin-aarch64-vX.Y.Z.tar.gz`
 - `SHA256SUMS.txt`
 
 These filenames are used by Scoop and Homebrew auto-updaters.
